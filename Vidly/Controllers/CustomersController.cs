@@ -20,7 +20,7 @@ namespace Vidly.Controllers
             _dbContext.Dispose();
         }
 
-        // GET: Customers
+        [Route("customers")]
         public ActionResult GetAllCustomers()
         {
             var customerViewModel = new CustmersViewModel
