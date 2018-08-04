@@ -45,7 +45,7 @@ namespace Vidly.Controllers
         [Route("customers/new")]
         public ActionResult New()
         {
-            var newCustomerViewModel = new NewCustomerViewModel
+            var newCustomerViewModel = new CustomerFormViewModel
             {
                 MembershipTypes = _dbContext.MembershipTypes.ToList()
             };
@@ -54,9 +54,19 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
-            _dbContext.Customers.Add(customer);
+            if (customer.Id == 0)
+            {
+                _dbContext.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDB = _dbContext.Customers.Single(cus => cus.Id == customer.Id);
+
+            }
+
+
             _dbContext.SaveChanges();
             return RedirectToAction("GetAllCustomers", "Customers");
         }
@@ -70,7 +80,7 @@ namespace Vidly.Controllers
                 return HttpNotFound();
             }
 
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 Customer = customer,
                 MembershipTypes = _dbContext.MembershipTypes.ToList()
