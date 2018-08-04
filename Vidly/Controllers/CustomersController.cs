@@ -50,7 +50,7 @@ namespace Vidly.Controllers
                 MembershipTypes = _dbContext.MembershipTypes.ToList()
             };
 
-            return View(newCustomerViewModel);
+            return View("CustomerForm", newCustomerViewModel);
         }
 
         [HttpPost]
@@ -61,5 +61,22 @@ namespace Vidly.Controllers
             return RedirectToAction("GetAllCustomers", "Customers");
         }
 
+        public ActionResult Edit(int id)
+        {
+            var customer = _dbContext.Customers.SingleOrDefault(cus => cus.Id == id);
+
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new NewCustomerViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _dbContext.MembershipTypes.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
+        }
     }
 }
