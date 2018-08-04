@@ -1,0 +1,31 @@
+﻿@model Vidly.ViewModels.CustmersViewModel
+@{
+    ViewBag.Title = "GetAllCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+<div>
+    @if (Model.Customers.Count == 0)
+    {
+        <text>No Customer Exist</text>
+    }
+    else
+    {
+        <table class="table table-striped table-hover ">
+            <tr>
+                <th>Customers</th>
+                <th>Discount Rate</th>
+                <th>Membership Type</th>
+            </tr>
+            @foreach (var customer in Model.Customers)
+            {
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "GetCustomerById", "Customers", new { id = customer.Id }, null)</td>
+                <td>@customer.MembershipType.DiscountRate%</td>
+                <td>@customer.MembershipType.Name</td>
+            </tr>
+            }
+        </table>
+    }
+</div>
