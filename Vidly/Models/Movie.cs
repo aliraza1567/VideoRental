@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Vidly.Models.Validations;
 
 namespace Vidly.Models
 {
@@ -22,6 +23,7 @@ namespace Vidly.Models
 
         [Display(Name = "Quantity In Stock")]
         [Required]
+        [StockNumberValidation]
         public int NumberInStock { get; set; }
     }
 }
