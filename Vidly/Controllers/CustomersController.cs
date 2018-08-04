@@ -62,10 +62,14 @@ namespace Vidly.Controllers
             }
             else
             {
-                var customerInDB = _dbContext.Customers.Single(cus => cus.Id == customer.Id);
+                var customerInDb = _dbContext.Customers.Single(cus => cus.Id == customer.Id);
 
+
+                customerInDb.Name = customer.Name;
+                customerInDb.DateOfBirth = customer.DateOfBirth;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
             }
-
 
             _dbContext.SaveChanges();
             return RedirectToAction("GetAllCustomers", "Customers");

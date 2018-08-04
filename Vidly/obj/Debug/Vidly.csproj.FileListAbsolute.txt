@@ -376,3 +376,9 @@ D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cach
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.dll
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.pdb
+D:\Work\Projects\VideoRental\Vidly\bin\AutoMapper.dll
+D:\Work\Projects\VideoRental\Vidly\bin\System.ValueTuple.dll
+D:\Work\Projects\VideoRental\Vidly\bin\AutoMapper.pdb
+D:\Work\Projects\VideoRental\Vidly\bin\AutoMapper.xml
+D:\Work\Projects\VideoRental\Vidly\bin\System.ValueTuple.xml
+D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
