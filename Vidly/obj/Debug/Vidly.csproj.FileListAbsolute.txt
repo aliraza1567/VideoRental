@@ -383,3 +383,4 @@ D:\Work\Projects\VideoRental\Vidly\bin\AutoMapper.xml
 D:\Work\Projects\VideoRental\Vidly\bin\System.ValueTuple.xml
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.GenreAdded.resources
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.GenreDataInsertion.resources
+D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache

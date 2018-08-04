@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Customers</h2>
+<div>
+    <h2>Customers</h2>
+    @Html.ActionLink("Add New Customer", "New", "Customers", null, new { @class = "btn btn-primary" })
+</div>
 <div>
     @if (Model.Customers.Count == 0)
     {

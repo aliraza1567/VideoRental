@@ -3,8 +3,10 @@
     ViewBag.Title = "GetAllMovies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Movies</h2>
+<div>
+    <h2>Movies</h2>
+    @Html.ActionLink("Add New Movie", "New", "Movies", null, new {@class = "btn btn-primary"})
+</div>
 <div>
     @if (Model.Movies.Count == 0)
     {
@@ -20,7 +22,7 @@
             @foreach (var movie in Model.Movies)
             {
                 <tr>
-                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { movieId = movie.Id}, null)</td>
+                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { movieId = movie.Id }, null)</td>
                     <td>@movie.Genre</td>
                 </tr>
             }
