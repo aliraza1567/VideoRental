@@ -23,7 +23,6 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult GetAllCustomers()
         {
-
             var customerViewModel = new CustmersViewModel
             {
                 Customers = _dbContext.Customers.Include(cus => cus.MembershipType).ToList()
@@ -42,5 +41,23 @@ namespace Vidly.Controllers
             }
             return View(customer);
         }
+
+        [Route("customers/new")]
+        public ActionResult New()
+        {
+            var newCustomerViewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = _dbContext.MembershipTypes.ToList()
+            };
+
+            return View(newCustomerViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            return View();
+        }
+
     }
 }
