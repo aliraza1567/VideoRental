@@ -383,4 +383,9 @@ D:\Work\Projects\VideoRental\Vidly\bin\AutoMapper.xml
 D:\Work\Projects\VideoRental\Vidly\bin\System.ValueTuple.xml
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.GenreAdded.resources
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.GenreDataInsertion.resources
-D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
+D:\Work\Projects\VideoRental\Vidly\bin\System.Net.Http.Formatting.dll
+D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.dll
+D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.WebHost.dll
+D:\Work\Projects\VideoRental\Vidly\bin\System.Net.Http.Formatting.xml
+D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.xml
+D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.WebHost.xml
