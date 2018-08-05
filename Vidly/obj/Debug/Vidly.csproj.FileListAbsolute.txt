@@ -389,3 +389,4 @@ D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.WebHost.dll
 D:\Work\Projects\VideoRental\Vidly\bin\System.Net.Http.Formatting.xml
 D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.xml
 D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.WebHost.xml
+D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache

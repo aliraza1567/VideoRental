@@ -9,10 +9,10 @@ namespace Vidly
     {
         protected void Application_Start()
         {
+            MappingProfile.InitializeMappings();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            AutoMapperConfig.RegisterMappings();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }

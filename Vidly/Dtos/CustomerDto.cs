@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using Vidly.Models.Validations;
 
-namespace Vidly.Models
+namespace Vidly.Dtos
 {
-    public class Customer
+    public class CustomerDto
     {
         public int Id { get; set; }
 
@@ -14,14 +14,9 @@ namespace Vidly.Models
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
-        public MembershipType MembershipType { get; set; }
-
-        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
-        [Display(Name = "Date of Birth")]
         [AgeValidationForMemebership]
         public DateTime? DateOfBirth { get; set; }
-
     }
 }
