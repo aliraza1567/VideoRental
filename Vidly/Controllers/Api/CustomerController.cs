@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
@@ -74,17 +73,18 @@ namespace Vidly.Controllers.Api
         }
 
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customerInDb = _dbContext.Customers.SingleOrDefault(cus => cus.Id == id);
 
             if (customerInDb == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return BadRequest();
             }
 
             _dbContext.Customers.Remove(customerInDb);
             _dbContext.SaveChanges();
+            return Ok();
         }
     }
 }

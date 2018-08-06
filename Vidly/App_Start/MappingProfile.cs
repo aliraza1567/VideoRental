@@ -8,10 +8,12 @@ namespace Vidly
     {
         public static void InitializeMappings()
         {
-            Mapper.Initialize((configMappings) =>
+            Mapper.Initialize(configMappings =>
             {
                 configMappings.CreateMap<Customer, CustomerDto>();
                 configMappings.CreateMap<CustomerDto, Customer>();
+                configMappings.CreateMap<Movie, MovieDto>();
+                configMappings.CreateMap<MovieDto, Movie>();
             });
         }
     }
