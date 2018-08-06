@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -17,30 +18,30 @@ namespace Vidly.Controllers.Api
             _dbContext = new ApplicationDbContext();
         }
 
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
             var customersdb = _dbContext.Customers.ToList();
-            return Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerDto>>(customersdb);
+            return Ok(Mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerDto>>(customersdb));
         }
 
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customersdb = _dbContext.Customers.SingleOrDefault(cus => cus.Id == id);
 
             if (customersdb == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
 
-            return Mapper.Map<Customer, CustomerDto>(customersdb);
+            return Ok(Mapper.Map<Customer, CustomerDto>(customersdb));
         }
 
         [HttpPost]
-        public CustomerDto GetCustomer(CustomerDto customerDto)
+        public IHttpActionResult GetCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
@@ -48,28 +49,28 @@ namespace Vidly.Controllers.Api
             _dbContext.Customers.Add(customer);
             _dbContext.SaveChanges();
 
-            return Mapper.Map<Customer, CustomerDto>(customer);
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id) , Mapper.Map<Customer, CustomerDto>(customer));
         }
 
         [HttpPut]
-        public CustomerDto GetCustomer(int id, CustomerDto customerDto)
+        public IHttpActionResult GetCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
             {
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
 
             var customerInDb = _dbContext.Customers.SingleOrDefault(cus => cus.Id == id);
 
             if (customerInDb == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
 
             Mapper.Map(customerDto, customerInDb);
             _dbContext.SaveChanges();
 
-            return Mapper.Map<Customer, CustomerDto>(customerInDb);
+            return Ok(Mapper.Map<Customer, CustomerDto>(customerInDb));
         }
 
         [HttpDelete]

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Vidly.Models.Validations;
 
 namespace Vidly.Dtos
 {
@@ -16,7 +15,6 @@ namespace Vidly.Dtos
 
         public byte MembershipTypeId { get; set; }
 
-        [AgeValidationForMemebership]
         public DateTime? DateOfBirth { get; set; }
     }
 }
