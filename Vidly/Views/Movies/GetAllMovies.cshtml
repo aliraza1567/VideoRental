@@ -15,7 +15,7 @@
     }
     else
     {
-        <table class="table table-striped table-hover" id="customers">
+        <table class="table table-striped table-hover">
             <tr>
                 <th>Movies</th>
                 <th>Genre</th>
@@ -25,32 +25,8 @@
                 <tr>
                     <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { movieId = movie.Id }, null)</td>
                     <td>@movie.Genre</td>
-                    <td>
-                        <button data-customer-id="@movie.Id" class="btn-link js-delete">Delete</button>
-                    </td>
                 </tr>
             }
         </table>
     }
 </div>
-
-@section scripts
-{
-    <script>
-        $(document).ready(function() {
-            $("#customers .js-delete").on("click",
-                function() {
-                    if (confirm("Do you really want to delete this movie?")) {
-                        $.ajax({
-                            url: "api/movie/" + $(this).attr("data-customer-id"),
-                            method: "DELETE",
-                            success: function() {
-                                console.log("Success");
-                            }
-                        });
-                    }
-                });
-        });
-    </script>
-}
-
