@@ -270,6 +270,10 @@
     <Compile Include="Migrations\201808041943051_GenreDataInsertion.Designer.cs">
       <DependentUpon>201808041943051_GenreDataInsertion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808072125047_SeedUsers.cs" />
+    <Compile Include="Migrations\201808072125047_SeedUsers.Designer.cs">
+      <DependentUpon>201808072125047_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -644,6 +648,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808041943051_GenreDataInsertion.resx">
       <DependentUpon>201808041943051_GenreDataInsertion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808072125047_SeedUsers.resx">
+      <DependentUpon>201808072125047_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
