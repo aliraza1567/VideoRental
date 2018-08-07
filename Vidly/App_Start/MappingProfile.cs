@@ -10,10 +10,9 @@ namespace Vidly
         {
             Mapper.Initialize(configMappings =>
             {
-                configMappings.CreateMap<Customer, CustomerDto>();
-                configMappings.CreateMap<CustomerDto, Customer>();
-                configMappings.CreateMap<Movie, MovieDto>();
-                configMappings.CreateMap<MovieDto, Movie>();
+                configMappings.CreateMap<Customer, CustomerDto>().ReverseMap();
+                configMappings.CreateMap<Movie, MovieDto>().ReverseMap();
+                configMappings.CreateMap<MembershipType, MembershipTypeDto>().ReverseMap();
             });
         }
     }
