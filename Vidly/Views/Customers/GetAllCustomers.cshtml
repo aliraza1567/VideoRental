@@ -54,7 +54,7 @@
                     {
                         data: "name",
                         render: function(data, type, customer) {
-                            return "<a href='/customers/edit/|" + customer.id + "'.>" + customer.name + "</a>";
+                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
                         }
                     },
                     {
@@ -73,9 +73,7 @@
             });
 
 
-            $("#customers").on("click",
-                ".js-customer-delete",
-                function() {
+            $("#customers").on("click", ".js-customer-delete", function() {
                     var button = $(this);
                     bootbox.confirm("Are you sure you want to delete the customer?",
                         function(result) {

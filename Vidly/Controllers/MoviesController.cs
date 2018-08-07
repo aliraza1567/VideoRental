@@ -115,9 +115,9 @@ namespace Vidly.Controllers
             return RedirectToAction("GetAllMovies", "Movies");
         }
 
-        public ActionResult Edit(int movieId)
+        public ActionResult Edit(int id)
         {
-            var movie = _dbContext.Movies.SingleOrDefault(mov => mov.Id == movieId);
+            var movie = _dbContext.Movies.SingleOrDefault(mov => mov.Id == id);
 
             if (movie == null)
             {
