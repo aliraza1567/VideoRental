@@ -16,30 +16,36 @@
     else
     {
         <table class="table table-striped table-hover" id="customers">
-            <tr>
-                <th>Customers</th>
-                <th>Discount Rate</th>
-                <th>Membership Type</th>
-            </tr>
-            @foreach (var customer in Model.Customers)
-            {
+            <thead>
                 <tr>
-                    <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
-                    <td>@customer.MembershipType.DiscountRate%</td>
-                    <td>@customer.MembershipType.Name</td>
-                    <td>
-                        <button data-customer-id="@customer.Id" class="btn-link js-customer-delete">Delete</button>
-                    </td>
+                    <th>Customers</th>
+                    <th>Discount Rate</th>
+                    <th>Membership Type</th>
+                    <th></th>
                 </tr>
-            }
-        </table>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model.Customers)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
+                        <td>@customer.MembershipType.DiscountRate%</td>
+                        <td>@customer.MembershipType.Name</td>
+                        <td>
+                            <button data-customer-id="@customer.Id" class="btn-link js-customer-delete">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+</table>
     }
 </div>
 
 @section scripts
 {
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
+            $("#customers").dataTable();
             $("#customers").on("click", ".js-customer-delete", function() {
                     var button = $(this);
                     bootbox.confirm("Are you sure you want to delete the customer?",
@@ -53,10 +59,8 @@
                                     }
                                 });
                             }
-                        });
-
-
-                });
+                    });
+            });
         });
     </script>
 }
