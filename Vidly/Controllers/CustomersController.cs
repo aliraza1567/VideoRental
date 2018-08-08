@@ -28,7 +28,7 @@ namespace Vidly.Controllers
                 Customers = _dbContext.Customers.Include(cus => cus.MembershipType).ToList()
             };
 
-            return View(customerViewModel);
+            return User.IsInRole(RoleName.CanManageMovies) ? View(customerViewModel) : View("GetAllCustomersViewOnly");
         }
 
         [Route("customers/getcustomerbyid/{id}")]
@@ -42,6 +42,7 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [Route("customers/new")]
         public ActionResult New()
         {
@@ -88,6 +89,7 @@ namespace Vidly.Controllers
             return RedirectToAction("GetAllCustomers", "Customers");
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var customer = _dbContext.Customers.SingleOrDefault(cus => cus.Id == id);
