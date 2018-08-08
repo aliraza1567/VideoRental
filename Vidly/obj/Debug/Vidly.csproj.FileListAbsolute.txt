@@ -391,3 +391,4 @@ D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.xml
 D:\Work\Projects\VideoRental\Vidly\bin\System.Web.Http.WebHost.xml
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
 D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
+D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.addedDrivingLicensceToUse.resources
