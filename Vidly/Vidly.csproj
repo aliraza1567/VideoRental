@@ -278,17 +278,37 @@
     <Compile Include="Migrations\201808080934400_addedDrivingLicensceToUse.Designer.cs">
       <DependentUpon>201808080934400_addedDrivingLicensceToUse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808082243115_AddedPhoneToUserProfile.cs" />
+    <Compile Include="Migrations\201808082243115_AddedPhoneToUserProfile.Designer.cs">
+      <DependentUpon>201808082243115_AddedPhoneToUserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddPhoneNumberViewModel.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="Models\ExternalLoginListViewModel.cs" />
+    <Compile Include="Models\FactorViewModel.cs" />
+    <Compile Include="Models\ForgotPasswordViewModel.cs" />
+    <Compile Include="Models\ForgotViewModel.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\IndexViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\ManageLoginsViewModel.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\ResetPasswordViewModel.cs" />
     <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\SendCodeViewModel.cs" />
+    <Compile Include="Models\SetPasswordViewModel.cs" />
     <Compile Include="Models\Validations\AgeValidationForMemebership.cs" />
     <Compile Include="Models\Validations\StockNumberValidation.cs" />
+    <Compile Include="Models\VerifyCodeViewModel.cs" />
+    <Compile Include="Models\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -661,6 +681,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808080934400_addedDrivingLicensceToUse.resx">
       <DependentUpon>201808080934400_addedDrivingLicensceToUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808082243115_AddedPhoneToUserProfile.resx">
+      <DependentUpon>201808082243115_AddedPhoneToUserProfile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
