@@ -21,5 +21,8 @@ namespace Vidly.Dtos
 
         [Required]
         public int NumberInStock { get; set; }
+
+        [Required]
+        public int NumberAvailable { get; set; }
     }
 }

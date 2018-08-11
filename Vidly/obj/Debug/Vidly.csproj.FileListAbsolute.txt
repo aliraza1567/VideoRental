@@ -398,3 +398,6 @@ D:\Work\Projects\VideoRental\Vidly\bin\Glimpse.AspNet.dll
 D:\Work\Projects\VideoRental\Vidly\bin\Glimpse.Core.dll
 D:\Work\Projects\VideoRental\Vidly\bin\Glimpse.EF6.dll
 D:\Work\Projects\VideoRental\Vidly\bin\Glimpse.Mvc5.dll
+D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.rentalsAdded.resources
+D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.rentalsrefactor.resources
+D:\Work\Projects\VideoRental\Vidly\obj\Debug\Vidly.Migrations.AddedNumberAvailableInMovies.resources

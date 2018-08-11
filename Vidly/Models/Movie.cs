@@ -25,5 +25,8 @@ namespace Vidly.Models
         [Required]
         [StockNumberValidation]
         public int NumberInStock { get; set; }
+
+        [Required]
+        public int NumberAvailable { get; set; }
     }
 }
