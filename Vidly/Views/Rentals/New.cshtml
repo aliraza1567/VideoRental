@@ -92,9 +92,11 @@
 
                 }).done(function () {
 
-                    console.log("Done");
+                    toastr.success("Rentals successfully added.");
 
                 }).fail(function() {
+
+                    toastr.success("Inter server error, Please contact IT.");
 
                 });
             });
