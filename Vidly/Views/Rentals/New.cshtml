@@ -12,7 +12,10 @@
     </div>
     <div class="form-group">
         <label>Movie</label>
-        <input type="text" class="form-control"/>
+        <input id="movie" type="text" class="form-control"/>
+    </div>
+    <div>
+        <ul class="list-group" id="movies"></ul>
     </div>
     <button class="btn btn-primary">Submit</button>
 </form>
@@ -21,6 +24,10 @@
 {
     <script>
         $(document).ready(function() {
+
+            var vm = {
+                movieIds: []
+            };
 
             var customers = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -32,12 +39,39 @@
             });
 
             $('#customer').typeahead({
-                minLength: 3,
-                highlight: true
-            }, {
-                name: 'customers',
-                display: 'name',
-                source: customers
+                    minLength: 3,
+                    highlight: true
+                },
+                {
+                    name: 'customers',
+                    display: 'name',
+                    source: customers
+                }).on("typeahead:select", function(e, customer) {
+                    vm.customerId = customer.id;
+            });
+
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/movie?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#movie').typeahead({
+                    minLength: 3,
+                    highlight: true
+                },
+                {
+                    name: 'movies',
+                    display: 'name',
+                    source: movies
+                }).on("typeahead:select", function(e, movie) {
+                    $("#movies").append("<li>" + movie.name + "</li>");
+                    $("#movie").typeahead("val", "");
+
+                    vm.movieIds.push(movie.id);
             });
         });
     </script>
