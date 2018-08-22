@@ -19,7 +19,8 @@ namespace Vidly.Controllers.Api
 
         public IHttpActionResult GetMovies(string query = null)
         {
-            var moviesQuery = _dbContext.Movies.DefaultIfEmpty();
+            var moviesQuery = _dbContext.Movies
+                .Where(movie => movie.NumberInStock >0);
 
             if (!string.IsNullOrWhiteSpace(query))
             {

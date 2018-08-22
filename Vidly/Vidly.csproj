@@ -313,6 +313,10 @@
     <Compile Include="Migrations\201808112106002_AddedNumberAvailableInMovies.Designer.cs">
       <DependentUpon>201808112106002_AddedNumberAvailableInMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808220851391_updateNumberAvaibaleforMovies.cs" />
+    <Compile Include="Migrations\201808220851391_updateNumberAvaibaleforMovies.Designer.cs">
+      <DependentUpon>201808220851391_updateNumberAvaibaleforMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddPhoneNumberViewModel.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -733,6 +737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808112106002_AddedNumberAvailableInMovies.resx">
       <DependentUpon>201808112106002_AddedNumberAvailableInMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808220851391_updateNumberAvaibaleforMovies.resx">
+      <DependentUpon>201808220851391_updateNumberAvaibaleforMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

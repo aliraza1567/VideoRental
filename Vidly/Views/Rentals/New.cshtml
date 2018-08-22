@@ -5,7 +5,7 @@
 }
 
 <h2>New Retal Form</h2>
-<form>
+<form id="newRental">
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
@@ -52,9 +52,10 @@
                     name: 'customers',
                     display: 'name',
                     source: customers
-                }).on("typeahead:select", function(e, customer) {
+                }).on("typeahead:select",
+                function(e, customer) {
                     vm.customerId = customer.id;
-            });
+                });
 
             var movies = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -73,11 +74,29 @@
                     name: 'movies',
                     display: 'name',
                     source: movies
-                }).on("typeahead:select", function(e, movie) {
+                }).on("typeahead:select",
+                function(e, movie) {
                     $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
                     $("#movie").typeahead("val", "");
 
                     vm.movieIds.push(movie.id);
+                });
+
+            $('#newRental').submit(function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: "/api/rentals",
+                    method: "post",
+                    data: vm
+
+                }).done(function () {
+
+                    console.log("Done");
+
+                }).fail(function() {
+
+                });
             });
         });
     </script>
