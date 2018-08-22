@@ -532,6 +532,7 @@ D:\Development\Work\VideoRental\Vidly\bin\Microsoft.AI.DependencyCollector.xml
 D:\Development\Work\VideoRental\Vidly\bin\Microsoft.AI.WindowsServer.xml
 D:\Development\Work\VideoRental\Vidly\bin\Microsoft.AI.Web.xml
 D:\Development\Work\VideoRental\Vidly\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
 D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
 D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.Migrations.MembershipTypeAdded.resources
 D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
@@ -554,4 +555,3 @@ D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.c
 D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.dll
 D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.pdb
-D:\Development\Work\VideoRental\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
